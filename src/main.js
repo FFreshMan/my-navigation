@@ -62,7 +62,7 @@ render();
 $(".addButton").on("click", () => {
   let url = window.prompt("请输入您要创建的网址");
   if (url.indexOf("http") !== 0) {
-    url = url + "https://";
+    url = "https://" + url;
   }
   const li = {
     logo: simplifyUrl(url)[0].toUpperCase(),
