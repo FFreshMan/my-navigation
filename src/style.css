@@ -1,0 +1,156 @@
+/* css reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+body {
+  background: #eee;
+  /* 虽然body部分只有包裹内部元素部分，但是给他background的时候还是会扩展到全屏; */
+}
+.globalHeader {
+  margin: 20px 20px;
+}
+@media (min-width: 500px) {
+  .globalHeader {
+    margin: 60px 0 100px;
+  }
+}
+.searchForm {
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 500px) {
+  .searchForm {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    /* 当最大宽度或者宽度固定可以用margin auto来居中 */
+  }
+}
+.searchForm > input {
+  width: 100%;
+  margin-right: 10px;
+  padding: 0 10px;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.searchForm > button {
+  white-space: nowrap;
+  padding: 0 28px;
+  border: none;
+  border-radius: 4px;
+  background: #348ada;
+  color: white;
+  font-size: 16px;
+}
+.globalMain {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.siteList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  justify-content: space-between;
+}
+@media (min-width: 500px) {
+  .siteList {
+    margin-right: -25px;
+    margin-left: 0;
+    justify-content: flex-start;
+
+    /* 为了让pc端能一行5个，需要使用负margin，margin-right为负意味着让右边的元素能靠近自己25 */
+  }
+}
+.siteList > li {
+  margin-bottom: 10px;
+}
+@media (min-width: 500px) {
+  .siteList > li {
+    margin-bottom: 10px;
+    margin-right: 25px;
+  }
+}
+
+.siteList .site {
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 20px 0;
+  position: relative;
+  cursor: pointer; /* 让点击变成手型 */
+}
+.siteList .site > .logo {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 64px;
+  text-transform: uppercase; /* 让内容全部大写 */
+}
+.siteList .site > .link {
+  font-size: 14px;
+  margin-top: 4px;
+}
+.siteList .site > .close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  display: none;
+}
+.siteList .site:hover > .close {
+  display: block;
+  cursor: default;
+}
+.siteList .addButton {
+  width: 160px;
+  /* height: 142px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 20px 0;
+}
+.siteList .addButton .icon {
+  width: 56px;
+  height: 56px;
+}
+.siteList .addButton .text {
+  font-size: 14px;
+  margin-top: 4px;
+  display: flex;
+}
+.siteList .addButton .iconWrapper {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
