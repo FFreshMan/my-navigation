@@ -163,7 +163,7 @@ $(".addButton").on("click", function () {
   var url = window.prompt("请输入您要创建的网址");
 
   if (url.indexOf("http") !== 0) {
-    url = url + "https://";
+    url = "https://" + url;
   }
 
   var li = {
@@ -172,10 +172,12 @@ $(".addButton").on("click", function () {
   };
   hashMap.push(li);
   render();
-}); // window.onbeforeunload = () => {
-//   const string = JSON.stringify(hashMap);
-//   localStorage.setItem("x", string);
-// };
+});
+
+window.onbeforeunload = function () {
+  var string = JSON.stringify(hashMap);
+  localStorage.setItem("x", string);
+};
 
 $(document).on("keypress", function (e) {
   for (var i = 0; i < hashMap.length; i++) {
@@ -185,4 +187,4 @@ $(document).on("keypress", function (e) {
   }
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.0a334bd0.js.map
+//# sourceMappingURL=main.6a93cb83.js.map
